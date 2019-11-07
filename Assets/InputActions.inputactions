@@ -1,1 +1,44 @@
-﻿{}
+{
+    "name": "InputActions",
+    "maps": [
+        {
+            "name": "Archery",
+            "id": "6998fda7-6cc2-4a90-a087-16538326d249",
+            "actions": [
+                {
+                    "name": "Aim",
+                    "type": "Value",
+                    "id": "15b2ca23-bee5-4111-82ba-95754f99beb2",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "827076e7-daec-423a-93fe-ab643e5d29d8",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68e10f65-0b1b-40cc-b9e6-49ed85ce3642",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
