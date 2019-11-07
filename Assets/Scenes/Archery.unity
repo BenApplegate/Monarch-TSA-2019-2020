@@ -245,9 +245,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1697341437}
   minDist: 2
-  maxDist: 4
+  maxDist: 8
   range: 0
-  placement: {x: 0, y: 0, z: 0}
+  placement: {x: 0, y: 0, z: 5}
 --- !u!136 &1527121230
 CapsuleCollider:
   m_ObjectHideFlags: 0
