@@ -7,35 +7,34 @@ public class CameraAim : MonoBehaviour
 {
 
     InputActions input; //Input object from the new Input System
-    Vector2 inputPos;
-    Quaternion StartRotation;
+    Vector2 inputPos; //The vector given by the Mouse/Controller joystick
+    Quaternion StartRotation; // The starting rotation of the object
 
-    public int verticalMin;
-    public int verticalMax;
-    public int horizontalMin;
-    public int horizontalMax;
+    public int verticalMin; // The vertical minimum of the Camera
+    public int verticalMax; // The vertical maximum of the Camera
+    public int horizontalMin; // The horizontal Minimum of the Camera
+    public int horizontalMax; // The horizontal Maximum of the Camera
 
-    
-    private float horizontal;
-    private float vertical;
+    private float horizontal;//the current horizontal shift of the camera 
+    private float vertical; //the currnet vertical shift of the camera
 
     
 
     private void Awake()
     {
-        input = new InputActions();
-        input.Archery.Aim.performed += ctx => inputPos = ctx.ReadValue<Vector2>();
-        input.Archery.Aim.canceled += ctx => inputPos = Vector2.zero;
+        input = new InputActions(); // create the inputActions class
+        input.Archery.Aim.performed += ctx => inputPos = ctx.ReadValue<Vector2>(); //Stores position of Mouse / Controller joystick to inputPos
+        input.Archery.Aim.canceled += ctx => inputPos = Vector2.zero; // Resets inputPos to zero when no longer moviong joystick / mouse
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        StartRotation = this.transform.rotation;
+        Cursor.visible = false; // hides mouse curser
+        Cursor.lockState = CursorLockMode.Locked; // Locks curser to center of screen
+        StartRotation = this.transform.rotation; // Sets Start Rotation
 
-        transform.rotation = StartRotation;
+        transform.rotation = StartRotation; // Sets Camera to starting rotation
 
     }
 
@@ -43,29 +42,29 @@ public class CameraAim : MonoBehaviour
     void Update()
     {
         Debug.Log(inputPos);
-        if(vertical >= verticalMin && inputPos.y < 0)
+        if(vertical >= verticalMin && inputPos.y < 0) // tests if camera is told to move down, and if it is allowed to move down
         {
-            vertical += inputPos.y * .1f;
-            transform.Rotate(-inputPos.y * .1f, 0, 0, Space.World);
+            vertical += inputPos.y * .1f; //changes vertical to match the camera's shift in rotation
+            transform.Rotate(-inputPos.y * .1f, 0, 0, Space.World); // Rotates Camera
         }
-        if (vertical <= verticalMax && inputPos.y > 0)
+        if (vertical <= verticalMax && inputPos.y > 0)// tests if camera is told to move up and if it is allowed to move up
         {
-            vertical += inputPos.y * .1f;
-            transform.Rotate(-inputPos.y * .1f, 0, 0, Space.World);
+            vertical += inputPos.y * .1f;// changes vertical to match the camera's shift in rotation
+            transform.Rotate(-inputPos.y * .1f, 0, 0, Space.World);// Rotates Camera
         }
 
 
-        if (horizontal <= horizontalMax && inputPos.x > 0)
+        if (horizontal <= horizontalMax && inputPos.x > 0) // Tests if camera is being told to go right, and if it is allowed to
         {
             Debug.Log("Right");
-            horizontal += inputPos.x * .1f;
-            transform.Rotate(0, inputPos.x * .1f, 0, Space.Self);
+            horizontal += inputPos.x * .1f; //Adjusts horizontal to reflect shift in rotation
+            transform.Rotate(0, inputPos.x * .1f, 0, Space.Self); //Rotates Camera
         }
-        if (horizontal >= horizontalMin && inputPos.x < 0)
+        if (horizontal >= horizontalMin && inputPos.x < 0)// Tests if camera is being told to go left, and if it is allowed to
         {
             Debug.Log("Left");
-            horizontal += inputPos.x * .1f;
-            transform.Rotate(0, inputPos.x * .1f, 0, Space.Self);
+            horizontal += inputPos.x * .1f; // Adjusts horizontal to reflect shift in camera's rotation
+            transform.Rotate(0, inputPos.x * .1f, 0, Space.Self); // Rotates Camera
         }
     }
 
