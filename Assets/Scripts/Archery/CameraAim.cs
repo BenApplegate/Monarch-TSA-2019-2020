@@ -41,30 +41,30 @@ public class CameraAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(inputPos);
+        //Debug.Log(inputPos);
         if(vertical >= verticalMin && inputPos.y < 0) // tests if camera is told to move down, and if it is allowed to move down
         {
             vertical += inputPos.y * .1f; //changes vertical to match the camera's shift in rotation
-            transform.Rotate(-inputPos.y * .1f, 0, 0, Space.World); // Rotates Camera
+            transform.Rotate(-inputPos.y * .1f, 0, 0, Space.Self); // Rotates Camera
         }
         if (vertical <= verticalMax && inputPos.y > 0)// tests if camera is told to move up and if it is allowed to move up
         {
             vertical += inputPos.y * .1f;// changes vertical to match the camera's shift in rotation
-            transform.Rotate(-inputPos.y * .1f, 0, 0, Space.World);// Rotates Camera
+            transform.Rotate(-inputPos.y * .1f, 0, 0, Space.Self);// Rotates Camera
         }
 
 
         if (horizontal <= horizontalMax && inputPos.x > 0) // Tests if camera is being told to go right, and if it is allowed to
         {
-            Debug.Log("Right");
+            //Debug.Log("Right");
             horizontal += inputPos.x * .1f; //Adjusts horizontal to reflect shift in rotation
-            transform.Rotate(0, inputPos.x * .1f, 0, Space.Self); //Rotates Camera
+            transform.Rotate(0, inputPos.x * .1f, 0, Space.World); //Rotates Camera
         }
         if (horizontal >= horizontalMin && inputPos.x < 0)// Tests if camera is being told to go left, and if it is allowed to
         {
-            Debug.Log("Left");
+            //Debug.Log("Left");
             horizontal += inputPos.x * .1f; // Adjusts horizontal to reflect shift in camera's rotation
-            transform.Rotate(0, inputPos.x * .1f, 0, Space.Self); // Rotates Camera
+            transform.Rotate(0, inputPos.x * .1f, 0, Space.World); // Rotates Camera
         }
     }
 

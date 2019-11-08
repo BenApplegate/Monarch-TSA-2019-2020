@@ -279,7 +279,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -858,7 +858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1697341437}
   minDist: 2
-  maxDist: 20
+  maxDist: 10
   range: 0
   placement: {x: 0, y: 0, z: 5}
 --- !u!136 &1527121230
@@ -947,6 +947,7 @@ GameObject:
   - component: {fileID: 1697341436}
   - component: {fileID: 1697341435}
   - component: {fileID: 1697341438}
+  - component: {fileID: 1697341439}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1035,6 +1036,26 @@ MonoBehaviour:
   verticalMax: 10
   horizontalMin: -10
   horizontalMax: 10
+--- !u!114 &1697341439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697341434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5be70cf38d76f04c9f4e50690c20d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 0
+  maxStrength: 15
+  strengthBuildRate: 3
+  power: 3
+  Arrow: {fileID: 8270983091436399571, guid: f8952a9a3a555a847942af2fdb7a1f4d, type: 3}
+  zoom: 1
+  cam: {fileID: 1697341436}
+  zoomFactor: 2
 --- !u!1 &2086175394
 GameObject:
   m_ObjectHideFlags: 0

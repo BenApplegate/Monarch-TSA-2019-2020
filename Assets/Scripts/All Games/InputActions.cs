@@ -25,6 +25,14 @@ public class InputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""FireArrow"",
+                    ""type"": ""Value"",
+                    ""id"": ""03546c46-8429-4f7c-b0c3-829e65878f84"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -49,6 +57,28 @@ public class InputActions : IInputActionCollection, IDisposable
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9feb4f24-00f9-4914-b015-a2ec3df89fcc"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireArrow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5ccd23bb-e660-4eaa-81c6-29f068d9e065"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireArrow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -58,6 +88,7 @@ public class InputActions : IInputActionCollection, IDisposable
         // Archery
         m_Archery = asset.FindActionMap("Archery", throwIfNotFound: true);
         m_Archery_Aim = m_Archery.FindAction("Aim", throwIfNotFound: true);
+        m_Archery_FireArrow = m_Archery.FindAction("FireArrow", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -108,11 +139,13 @@ public class InputActions : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Archery;
     private IArcheryActions m_ArcheryActionsCallbackInterface;
     private readonly InputAction m_Archery_Aim;
+    private readonly InputAction m_Archery_FireArrow;
     public struct ArcheryActions
     {
         private InputActions m_Wrapper;
         public ArcheryActions(InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Aim => m_Wrapper.m_Archery_Aim;
+        public InputAction @FireArrow => m_Wrapper.m_Archery_FireArrow;
         public InputActionMap Get() { return m_Wrapper.m_Archery; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -125,6 +158,9 @@ public class InputActions : IInputActionCollection, IDisposable
                 Aim.started -= m_Wrapper.m_ArcheryActionsCallbackInterface.OnAim;
                 Aim.performed -= m_Wrapper.m_ArcheryActionsCallbackInterface.OnAim;
                 Aim.canceled -= m_Wrapper.m_ArcheryActionsCallbackInterface.OnAim;
+                FireArrow.started -= m_Wrapper.m_ArcheryActionsCallbackInterface.OnFireArrow;
+                FireArrow.performed -= m_Wrapper.m_ArcheryActionsCallbackInterface.OnFireArrow;
+                FireArrow.canceled -= m_Wrapper.m_ArcheryActionsCallbackInterface.OnFireArrow;
             }
             m_Wrapper.m_ArcheryActionsCallbackInterface = instance;
             if (instance != null)
@@ -132,6 +168,9 @@ public class InputActions : IInputActionCollection, IDisposable
                 Aim.started += instance.OnAim;
                 Aim.performed += instance.OnAim;
                 Aim.canceled += instance.OnAim;
+                FireArrow.started += instance.OnFireArrow;
+                FireArrow.performed += instance.OnFireArrow;
+                FireArrow.canceled += instance.OnFireArrow;
             }
         }
     }
@@ -139,5 +178,6 @@ public class InputActions : IInputActionCollection, IDisposable
     public interface IArcheryActions
     {
         void OnAim(InputAction.CallbackContext context);
+        void OnFireArrow(InputAction.CallbackContext context);
     }
 }
