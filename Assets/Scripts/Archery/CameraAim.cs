@@ -18,6 +18,10 @@ public class CameraAim : MonoBehaviour
     private float horizontal;//the current horizontal shift of the camera 
     private float vertical; //the currnet vertical shift of the camera
 
+    public bool shakeCamera = true; // Should the camera shake?
+    public float shakefactor= .01f; // How many degrees does the camera shake
+    public float shakeSlowFactor = 5; // how slow should the camera shake
+
     
 
     private void Awake()
@@ -66,6 +70,22 @@ public class CameraAim : MonoBehaviour
             horizontal += inputPos.x * .1f; // Adjusts horizontal to reflect shift in camera's rotation
             transform.Rotate(0, inputPos.x * .1f, 0, Space.World); // Rotates Camera
         }
+
+        if (shakeCamera) ShakeCamera(); // tests if the camera should shake
+
+    }
+
+    public void ShakeCamera()
+    {
+        ShootProjectile projectile = this.GetComponent<ShootProjectile>(); // gets the ShootProjectile object on the camera
+        float Hshake = Random.Range(-shakefactor * projectile.strength/ shakeSlowFactor, shakefactor * projectile.strength/ shakeSlowFactor); // Randomly picks horizontal shake
+        float Vshake = Random.Range(-shakefactor * projectile.strength/ shakeSlowFactor, shakefactor * projectile.strength/shakeSlowFactor); // Randomly picks Vertical shake
+
+        vertical += Vshake;
+        transform.Rotate(Vshake, 0, 0, Space.Self);
+        horizontal += Hshake;
+        transform.Rotate(0, Hshake, 0, Space.World);
+
     }
 
     private void OnEnable()
