@@ -1533,7 +1533,7 @@ MonoBehaviour:
   horizontalMin: -10
   horizontalMax: 10
   shakeCamera: 1
-  shakefactor: 0.02
+  shakefactor: 0.22
   shakeSlowFactor: 5
 --- !u!114 &1697341439
 MonoBehaviour:

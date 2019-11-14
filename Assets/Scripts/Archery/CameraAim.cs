@@ -19,10 +19,13 @@ public class CameraAim : MonoBehaviour
     private float vertical; //the currnet vertical shift of the camera
 
     public bool shakeCamera = true; // Should the camera shake?
-    public float shakefactor= .01f; // How many degrees does the camera shake
+    public float shakefactor = .01f; // How many degrees does the camera shake
     public float shakeSlowFactor = 5; // how slow should the camera shake
+    int shakeCount = 0;
+    float Hshake;
+    float Vshake;
 
-    
+
 
     private void Awake()
     {
@@ -46,7 +49,7 @@ public class CameraAim : MonoBehaviour
     void Update()
     {
         //Debug.Log(inputPos);
-        if(vertical >= verticalMin && inputPos.y < 0) // tests if camera is told to move down, and if it is allowed to move down
+        if (vertical >= verticalMin && inputPos.y < 0) // tests if camera is told to move down, and if it is allowed to move down
         {
             vertical += inputPos.y * .1f; //changes vertical to match the camera's shift in rotation
             transform.Rotate(-inputPos.y * .1f, 0, 0, Space.Self); // Rotates Camera
@@ -78,13 +81,26 @@ public class CameraAim : MonoBehaviour
     public void ShakeCamera()
     {
         ShootProjectile projectile = this.GetComponent<ShootProjectile>(); // gets the ShootProjectile object on the camera
-        float Hshake = Random.Range(-shakefactor * projectile.strength/ shakeSlowFactor, shakefactor * projectile.strength/ shakeSlowFactor); // Randomly picks horizontal shake
-        float Vshake = Random.Range(-shakefactor * projectile.strength/ shakeSlowFactor, shakefactor * projectile.strength/shakeSlowFactor); // Randomly picks Vertical shake
 
-        vertical += Vshake;
-        transform.Rotate(Vshake, 0, 0, Space.Self);
-        horizontal += Hshake;
-        transform.Rotate(0, Hshake, 0, Space.World);
+        if (shakeCount == 0 || shakeCount == 5) {
+         Hshake = Random.Range(-shakefactor * projectile.strength / shakeSlowFactor, shakefactor * projectile.strength / shakeSlowFactor); // Randomly picks horizontal shake
+         Vshake = Random.Range(-shakefactor * projectile.strength / shakeSlowFactor, shakefactor * projectile.strength / shakeSlowFactor); // Randomly picks Vertical shake
+    }
+        else{
+            vertical -= Vshake/10;
+            transform.Rotate(Vshake/10, 0, 0, Space.Self);
+            horizontal += Hshake/10;
+            transform.Rotate(0, Hshake/10, 0, Space.World);
+        }
+
+        if(shakeCount == 0 || shakeCount < 9)
+        {
+            shakeCount++;
+        }
+        else
+        {
+            shakeCount = 0;
+        }
 
     }
 
