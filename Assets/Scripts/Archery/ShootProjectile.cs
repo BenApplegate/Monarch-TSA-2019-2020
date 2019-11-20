@@ -12,9 +12,9 @@ public class ShootProjectile : MonoBehaviour
     public int maxStrength;
     public float strengthBuildRate;
     public float power = 3;
-
     bool fireing = false;
-
+    public bool arrowLimit = true;
+    public float arrowsShot = 0;
     public GameObject Arrow;
 
     public bool zoom = true;
@@ -24,11 +24,13 @@ public class ShootProjectile : MonoBehaviour
 
     private void Awake()
     {
-        input = new InputActions();
-        input.Archery.FireArrow.performed += ctx => inputStrength = ctx.ReadValue<float>();
-        input.Archery.FireArrow.performed += ctx => fireing = true;
-        input.Archery.FireArrow.canceled += ctx => fireing = false;
-        input.Archery.FireArrow.canceled += ctx => Fire();
+        if (arrowsShot < 5){
+            input = new InputActions();
+            input.Archery.FireArrow.performed += ctx => inputStrength = ctx.ReadValue<float>();
+            input.Archery.FireArrow.performed += ctx => fireing = true;
+            input.Archery.FireArrow.canceled += ctx => fireing = false;
+            input.Archery.FireArrow.canceled += ctx => Fire();
+        }
     }
 
     private void BuildStrength()
@@ -45,11 +47,17 @@ public class ShootProjectile : MonoBehaviour
 
     private void Fire()
     {
-        GameObject fired = Instantiate(Arrow, this.transform.position , this.transform.rotation);
+
+
+
+        if (arrowsShot <= 5) { 
+        GameObject fired = Instantiate(Arrow, this.transform.position, this.transform.rotation);
         fired.transform.Rotate(90, 0, 0);
         fired.GetComponent<Rigidbody>().velocity += this.transform.forward * strength * power;
         strength = 0;
         cam.fieldOfView = startingFOV;
+        arrowsShot++;
+    }
     }
     // Start is called before the first frame update
     void Start()
@@ -60,7 +68,7 @@ public class ShootProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fireing)
+        if (fireing && arrowsShot<6)
         {
             BuildStrength();
         }
