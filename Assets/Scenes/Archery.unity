@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cb34360ac355041aab303f395cb7cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.25
+      value: -2.81
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cb34360ac355041aab303f395cb7cc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1273,7 +1273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cb34360ac355041aab303f395cb7cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.2514231
+      value: -4.49
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cb34360ac355041aab303f395cb7cc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1551,6 +1551,8 @@ MonoBehaviour:
   maxStrength: 15
   strengthBuildRate: 3
   power: 3
+  arrowLimit: 1
+  arrowsShot: 1
   Arrow: {fileID: 8270983091436399571, guid: f8952a9a3a555a847942af2fdb7a1f4d, type: 3}
   zoom: 1
   cam: {fileID: 1697341436}
@@ -1690,7 +1692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cb34360ac355041aab303f395cb7cc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.85
+      value: 1.76
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cb34360ac355041aab303f395cb7cc, type: 3}
       propertyPath: m_LocalRotation.x
