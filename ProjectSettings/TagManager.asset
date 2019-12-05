@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bullseye
+  - Inner Ring
+  - Outer Ring
+  - Target
   layers:
   - Default
   - TransparentFX

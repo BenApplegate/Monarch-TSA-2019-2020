@@ -7,6 +7,8 @@ public class ShootProjectile : MonoBehaviour
 {
     InputActions input;
     float inputStrength;
+    
+    public int points;
 
     public float strength;
     public int maxStrength;
@@ -54,6 +56,7 @@ public class ShootProjectile : MonoBehaviour
         GameObject fired = Instantiate(Arrow, this.transform.position, this.transform.rotation);
         fired.transform.Rotate(90, 0, 0);
         fired.GetComponent<Rigidbody>().velocity += this.transform.forward * strength * power;
+        fired.GetComponent<Arrow>().shootProjectile = this;
         strength = 0;
         cam.fieldOfView = startingFOV;
         arrowsShot++;
