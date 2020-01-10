@@ -76,6 +76,17 @@ public class CameraAim : MonoBehaviour
 
         if (shakeCamera) ShakeCamera(); // tests if the camera should shake
 
+        if(BetterPauseMenu.gameIsPaused) {
+            Cursor.visible = true;
+            input.Disable();
+            Cursor.lockState = CursorLockMode.None;
+        }
+        if (!(BetterPauseMenu.gameIsPaused)) {
+            Cursor.visible = false;
+            input.Enable();
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
     }
 
     public void ShakeCamera()
