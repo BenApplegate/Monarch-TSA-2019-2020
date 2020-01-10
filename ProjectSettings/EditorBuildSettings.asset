@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Archery.unity
     guid: 7366ead17020c3643aa3d36a8930325e
+  - enabled: 1
+    path: Assets/Scenes/Shooting.unity
+    guid: 2be0ca49daf679b48ab1b638e374f2b2
+  - enabled: 1
+    path: Assets/Scenes/Swimming.unity
+    guid: ff514f0341d82e74f8f6e5ebcfecfdad
+  - enabled: 1
+    path: Assets/Scenes/Weight Lifting.unity
+    guid: 413b22f2ca19f0b4cb9d02bad70ee19a
   m_configObjects: {}
