@@ -1,0 +1,83 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine;
+
+public class Score : MonoBehaviour
+{ 
+
+    public coxswain chec;
+    public getMedal gld;
+    public getMedal slv;
+    public getMedal brz;
+
+    bool score = false;
+    public int numscore = 0;
+    public float ctime = 30f;
+    //float stime = 30f;
+
+    public Text stext;
+
+    void start()
+    {
+        //ctime = stime;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        ctime -= 1 * Time.deltaTime;
+        medal(numscore);
+
+        // calulate score, works meh
+        if (Input.anyKey)
+        {
+            score = chec.getScore();
+            if (score == true)
+                numscore += 1;
+            // should have no negative socres
+            if (numscore < 0)
+                numscore = 0;
+
+            // display the score
+            stext.text = "Score: " + numscore;
+        }
+        
+    }
+
+    // return the score
+    public int getScore()
+    {
+        return numscore;
+    }
+    // display the medals at the end of the game
+    public void medal(int scr)
+    {
+        // the ai scores
+        int scr1 = 70;
+        int scr2 = 60;
+        int scr3 = 50;
+
+        if (scr > scr1 && ctime <= 0)
+        {
+            // diplay gold
+            gld.display();
+        }
+        else if (scr > scr2 && ctime <= 0)
+        {
+            // display silver
+            slv.display();
+        }
+        else if (scr > scr3 && ctime <= 0)
+        {
+            //display bronze
+            brz.display();
+        }
+        else
+        {
+            // display lose
+        }
+    }
+
+    
+}
