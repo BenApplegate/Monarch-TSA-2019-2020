@@ -1,18 +1,25 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Shotgun : MonoBehaviour
 {
+    public string Archery;
     // Start is called before the first frame update
     public float damage = 10f;
     public float range = 100f;
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
+    public float shots = 0f;
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+                Shoot();
+        }
+
+        else if (shots >= 2)
+        {
+            SceneManager.LoadScene(Archery);
         }
     }
     void Shoot()
@@ -27,6 +34,7 @@ public class Shotgun : MonoBehaviour
             {
                 target.TakeDamage(damage);
             }
+            shots++;
         }
     }
 }

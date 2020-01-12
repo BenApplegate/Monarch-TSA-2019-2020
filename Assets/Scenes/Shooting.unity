@@ -492,10 +492,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1244923cb196e14f8a631a78d9bd8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Archery: Archery
   damage: 100.05
   range: 100
   fpsCam: {fileID: 527538523}
   muzzleFlash: {fileID: 1108117118}
+  shots: 0
 --- !u!1001 &491013622
 PrefabInstance:
   m_ObjectHideFlags: 0
