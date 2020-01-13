@@ -16,7 +16,9 @@ public class ShootProjectile : MonoBehaviour
     public float power = 3;
     bool fireing = false;
     public bool arrowLimit = true;
-    public float arrowsShot = 0;
+    public int arrows = 5;
+    private float arrowsShot = 0;
+
     public GameObject Arrow;
 
     public bool zoom = true;
@@ -26,13 +28,12 @@ public class ShootProjectile : MonoBehaviour
 
     private void Awake()
     {
-        if (arrowsShot < 5){
             input = new InputActions();
             input.Archery.FireArrow.performed += ctx => inputStrength = ctx.ReadValue<float>();
             input.Archery.FireArrow.performed += ctx => fireing = true;
             input.Archery.FireArrow.canceled += ctx => fireing = false;
             input.Archery.FireArrow.canceled += ctx => Fire();
-        }
+        
     }
 
     private void BuildStrength()
@@ -51,15 +52,18 @@ public class ShootProjectile : MonoBehaviour
     {
 
 
-
-        if (arrowsShot <= 5) { 
+        cam.fieldOfView = startingFOV;
+        if (arrowsShot < arrows) { 
         GameObject fired = Instantiate(Arrow, this.transform.position, this.transform.rotation);
         fired.transform.Rotate(90, 0, 0);
         fired.GetComponent<Rigidbody>().velocity += this.transform.forward * strength * power;
         fired.GetComponent<Arrow>().shootProjectile = this;
         strength = 0;
-        cam.fieldOfView = startingFOV;
         arrowsShot++;
+        if(arrowsShot == arrows)
+            {
+                endGame();
+            }
     }
     }
     // Start is called before the first frame update
@@ -71,10 +75,16 @@ public class ShootProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fireing && arrowsShot<6)
+        if (fireing && arrowsShot<arrows)
         {
             BuildStrength();
         }
+    }
+
+    private void endGame()
+    {
+        Debug.Log("Game Over");
+        //put code that ends the game here
     }
 
     private void OnEnable()

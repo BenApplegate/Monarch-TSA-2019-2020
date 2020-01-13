@@ -927,8 +927,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1697341437}
-  minDist: 5
-  maxDist: 10
+  minDist: 3
+  maxDist: 7
   range: 0
   placement: {x: 0, y: 0, z: 5}
 --- !u!65 &737704546
@@ -1780,7 +1780,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1845,12 +1845,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 0
   strength: 0
-  maxStrength: 15
+  maxStrength: 10
   strengthBuildRate: 3
   power: 3
   arrowLimit: 1
-  arrowsShot: 0
-  Arrow: {fileID: 8270983091436399571, guid: f8952a9a3a555a847942af2fdb7a1f4d, type: 3}
+  arrows: 5
+  Arrow: {fileID: 4432505427355967797, guid: c75eb053b23a3c64a963ecaa11b178bf, type: 3}
   zoom: 1
   cam: {fileID: 1697341436}
   zoomFactor: 2

@@ -11,7 +11,7 @@ public class Arrow : MonoBehaviour
         this.shootProjectile = shootProjectile;
     }
 
-    private void OnCollisionEnter(Collision collision) // The if else statements are broken
+    private void OnTriggerEnter(Collider collision)
     {
         this.GetComponent<Rigidbody>().isKinematic = true;
 
