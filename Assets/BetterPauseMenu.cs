@@ -9,6 +9,8 @@ public class BetterPauseMenu : MonoBehaviour
 
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+
+
     // Update is called once per frame
     void Update()
     {
