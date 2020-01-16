@@ -25,25 +25,25 @@ public class BetterPauseMenu : MonoBehaviour
         }
     }
 
-    void Resume () {
-        pauseMenuUI.SetActive(false);
+    void Resume () { // Resume the scene
+        pauseMenuUI.SetActive(false); 
         Time.timeScale = 1f;
         gameIsPaused = false;
     }
 
-    void Pause () {
+    void Pause () { //Pause the scene and pulls up the UI for pause menu
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
 
     }
 
-    public void quitGame () {
+    public void quitGame () { // Quit the game
         Debug.Log("Quitting Game...");
         Application.Quit();
     }
 
-    public void mainMenu () {
+    public void mainMenu () { // Go to the main menu
         SceneManager.LoadScene("BetterMenu");
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
