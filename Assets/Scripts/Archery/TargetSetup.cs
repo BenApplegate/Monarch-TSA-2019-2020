@@ -12,14 +12,8 @@ public class TargetSetup : MonoBehaviour
     // Initializes target distance from player
     void Start()
     {
-        range = Random.Range(minDist, maxDist);
-        placement.z += range;
-        transform.position = player.position + placement;
-    }
-
-    
-    void fixedUpdate()
-    {
-        
+        range = Random.Range(minDist, maxDist); // Selects a random number within the range and stores it
+        placement.z += range; // Stores the position that the target should be placed at
+        transform.position = player.position + placement; // Moves the target
     }
 }

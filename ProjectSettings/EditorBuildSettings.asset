@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MainMenu/BetterMenu.unity
+    path: Assets/Scenes/MainMenu/BetterMenu.unity
     guid: 58bdf6369a0265b42affae4503682f91
   - enabled: 1
     path: Assets/Scenes/Archery.unity
