@@ -44,7 +44,7 @@ public class BetterPauseMenu : MonoBehaviour
     }
 
     public void mainMenu () {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("BetterMenu");
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 1;

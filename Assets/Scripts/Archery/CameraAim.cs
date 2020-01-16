@@ -37,6 +37,7 @@ public class CameraAim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         Cursor.visible = false; // hides mouse curser
         Cursor.lockState = CursorLockMode.Locked; // Locks curser to center of screen
         StartRotation = this.transform.rotation; // Sets Start Rotation

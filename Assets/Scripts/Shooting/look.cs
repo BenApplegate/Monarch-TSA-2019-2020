@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class look : MonoBehaviour
 {
@@ -9,9 +10,17 @@ public class look : MonoBehaviour
     public Transform playerBody;
 
     float xRotation = 0f;
+
+    InputActions input;
+
+    void Awake()
+    {
+        input = new InputActions();
+    }
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false; // hides mouse curser
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -27,6 +36,18 @@ public class look : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
 
+
+        if(BetterPauseMenu.gameIsPaused) {
+            
+            Cursor.visible = true;
+            input.Disable();
+            Cursor.lockState = CursorLockMode.None;
+        }
+        if (!(BetterPauseMenu.gameIsPaused)) {
+            Cursor.visible = false;
+            input.Enable();
+            Cursor.lockState = CursorLockMode.Locked;
+        }
 
     }
 }

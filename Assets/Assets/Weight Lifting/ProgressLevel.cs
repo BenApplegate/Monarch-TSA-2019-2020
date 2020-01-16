@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class ProgressLevel : MonoBehaviour
 {
     
@@ -20,6 +21,7 @@ public class ProgressLevel : MonoBehaviour
     void Start()
     {
         IncrementProgress(0.5f);
+
     }
 
     // Update is called once per frame
