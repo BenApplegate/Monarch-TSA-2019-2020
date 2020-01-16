@@ -7,6 +7,11 @@ public class Arrow : MonoBehaviour
     public ShootProjectile shootProjectile; // This is broken
     public CapsuleCollider otherColider;
 
+    private void Start()
+    {
+        this.gameObject.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+    }
+
     public Arrow(ShootProjectile shootProjectile) // This is broken
     {
         this.shootProjectile = shootProjectile;
