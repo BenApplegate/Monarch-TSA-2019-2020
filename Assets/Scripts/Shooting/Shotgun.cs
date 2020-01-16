@@ -18,10 +18,8 @@ public class Shotgun : MonoBehaviour
             shots++;
         }
 
-        else if (shots >= 5)
-        {
-            SceneManager.LoadScene(Archery);
-        }
+        if (shots == 5)
+            SceneManager.LoadScene("Weight Lifting");
     }
     void Shoot()
     {
