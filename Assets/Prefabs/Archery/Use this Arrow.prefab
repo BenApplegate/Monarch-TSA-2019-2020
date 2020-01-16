@@ -362,8 +362,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.15
-  m_Center: {x: 0, y: 2.1, z: 0}
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 2.2, z: 0}
 --- !u!136 &271659000755752181
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -391,6 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootProjectile: {fileID: 0}
+  otherColider: {fileID: 271659000755752181}
 --- !u!54 &1174697918123682766
 Rigidbody:
   m_ObjectHideFlags: 0
