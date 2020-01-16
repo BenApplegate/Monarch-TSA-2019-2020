@@ -1060,6 +1060,26 @@ PrefabInstance:
     - target: {fileID: -366240488510712766, guid: b53ad4dfaaae9d14a939c6aaa6c44d9f,
         type: 3}
       propertyPath: m_LocalPosition.y
+      value: -0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: -4652937146847591373, guid: b53ad4dfaaae9d14a939c6aaa6c44d9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6982569251398080339, guid: b53ad4dfaaae9d14a939c6aaa6c44d9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7209440527786909925, guid: b53ad4dfaaae9d14a939c6aaa6c44d9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7558520839903180750, guid: b53ad4dfaaae9d14a939c6aaa6c44d9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4353,8 +4373,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1697341437}
-  minDist: 3
-  maxDist: 7
+  minDist: 1
+  maxDist: 1
   range: 0
   placement: {x: 0, y: -0.1, z: 3}
 --- !u!1001 &2066331236
