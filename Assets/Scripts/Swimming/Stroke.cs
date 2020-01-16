@@ -4,8 +4,8 @@ using UnityEngine;
 public class Stroke : MonoBehaviour
 {
     public Transform move; // Holds the position of the player for movement
-    public bool apressed; // Checks if "a" key is pressed
-    public bool dpressed; // Checks if "d" key is pressed
+    public bool apressed; // Signals if "a" key has been pressed
+    public bool dpressed; // Signals if "d" key has been pressed
 
     // Start is called before the first frame update
     void Start()
