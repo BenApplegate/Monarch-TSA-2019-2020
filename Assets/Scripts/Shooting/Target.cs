@@ -4,17 +4,11 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     public float health = 50f;
-    float x;
-    float y;
-    float z;
-    Vector3 pos;
+    public Rigidbody rb;
     void Start()
     {
-        x = Random.Range(-5, 5);
-        y = Random.Range(3, 7);
-        z = 5;
-        pos = new Vector3(x, y, z);
-        transform.position = pos;
+        StartCoroutine(Seconds());
+        rb.AddForce(0 - Random.Range(5, 9), Random.Range(10, 12), 0, ForceMode.Impulse);
     }
 
 
@@ -29,5 +23,9 @@ public class Target : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+    }
+    WaitForSecondsRealtime Seconds()
+    {
+        return new WaitForSecondsRealtime(5);
     }
 }

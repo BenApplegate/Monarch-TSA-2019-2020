@@ -15,9 +15,10 @@ public class Shotgun : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
                 Shoot();
+            shots++;
         }
 
-        else if (shots >= 2)
+        else if (shots >= 5)
         {
             SceneManager.LoadScene(Archery);
         }
@@ -34,7 +35,7 @@ public class Shotgun : MonoBehaviour
             {
                 target.TakeDamage(damage);
             }
-            shots++;
+            
         }
     }
 }
