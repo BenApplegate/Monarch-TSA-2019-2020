@@ -6,6 +6,7 @@ public class Arrow : MonoBehaviour
 {
     public ShootProjectile shootProjectile; // This is broken
     public CapsuleCollider otherColider;
+    bool hasHit = false;
 
     private void Start()
     {
@@ -19,8 +20,12 @@ public class Arrow : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        this.GetComponent<Rigidbody>().isKinematic = true;
-        otherColider.enabled = false;
-        Debug.Log(collision.name);
+        if (!hasHit)
+        {
+            hasHit = true;
+            this.GetComponent<Rigidbody>().isKinematic = true;
+            otherColider.enabled = false;
+            Debug.Log(collision.name);
+        }
     }
 }
