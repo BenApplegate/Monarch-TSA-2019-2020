@@ -23,6 +23,8 @@ public class ShootProjectile : MonoBehaviour
     public Camera cam; // the camera
     public float zoomFactor = 2; // the factor that the camera zooms by
 
+    public BetterPauseMenu BetterPauseMenu;
+
     private void Awake()
     {
             input = new InputActions();
@@ -75,6 +77,18 @@ public class ShootProjectile : MonoBehaviour
         if (fireing && arrowsShot<arrows) // If you have arrows to fire and you are holding the fire button
         {
             BuildStrength();
+        }
+
+        if (BetterPauseMenu.gameIsPaused)
+        {
+            input.Disable();
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            input.Enable();
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 

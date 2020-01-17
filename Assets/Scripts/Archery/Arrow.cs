@@ -6,10 +6,12 @@ public class Arrow : MonoBehaviour
 {
     public ShootProjectile shootProjectile; // This is broken
     public CapsuleCollider otherColider;
+    public ArcheryScoreManager ScoreManager;
     bool hasHit = false;
 
     private void Start()
     {
+        ScoreManager = FindObjectOfType<ArcheryScoreManager>();
         this.gameObject.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
     }
 
@@ -22,10 +24,11 @@ public class Arrow : MonoBehaviour
     {
         if (!hasHit)
         {
+            this.gameObject.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
             hasHit = true;
             this.GetComponent<Rigidbody>().isKinematic = true;
             otherColider.enabled = false;
-            Debug.Log(collision.name);
+            ScoreManager.AddScore(collision);
         }
     }
 }
