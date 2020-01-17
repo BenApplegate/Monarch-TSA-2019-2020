@@ -49,4 +49,10 @@ public class BetterPauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 1;
     }
+
+    public void ResumeButton () {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1;
+        gameIsPaused = false;
+    }
 }
