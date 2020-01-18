@@ -17,6 +17,8 @@ public class Stroke : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+
         if (dpressed == true)
         {
             CheckA();
@@ -40,8 +42,7 @@ public class Stroke : MonoBehaviour
 
     public void CheckD()
     {
-        if (Input.GetKey(KeyCode.D)
-                == true)
+        if (Input.GetKey(KeyCode.D) == true)
         {
             move.position += new Vector3(3.3f, 0.0f, 0.0f);
             dpressed = true;
