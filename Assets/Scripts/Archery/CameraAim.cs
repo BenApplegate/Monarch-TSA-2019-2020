@@ -15,8 +15,8 @@ public class CameraAim : MonoBehaviour
     public int horizontalMin; // The horizontal Minimum of the Camera
     public int horizontalMax; // The horizontal Maximum of the Camera
 
-    private float horizontal;//the current horizontal shift of the camera 
-    private float vertical; //the currnet vertical shift of the camera
+    public float horizontal;//the current horizontal shift of the camera 
+    public float vertical; //the currnet vertical shift of the camera
 
     public bool shakeCamera = true; // Should the camera shake?
     public float shakefactor = .01f; // How many degrees does the camera shake

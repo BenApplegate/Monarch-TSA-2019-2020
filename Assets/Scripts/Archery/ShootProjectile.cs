@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ShootProjectile : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class ShootProjectile : MonoBehaviour
 
     bool ending = false;
     float endingTimer = 0;
+    public Text ArrowsLeft;
+    Quaternion CamRot;
 
     private void Awake()
     {
@@ -65,7 +68,10 @@ public class ShootProjectile : MonoBehaviour
         fired.GetComponent<Arrow>().shootProjectile = this; // Gives the arrow a reference to this script
         strength = 0; // resets strength
         arrowsShot++; // increments arrowsShot
-        if(arrowsShot == arrows) // If the player has fired all of their arrows
+            cam.transform.rotation = CamRot;
+            cam.GetComponent<CameraAim>().vertical = 0;
+            cam.GetComponent<CameraAim>().horizontal = 0;
+            if (arrowsShot == arrows) // If the player has fired all of their arrows
             {
                 Debug.Log("endGame");
                 ending = true;
@@ -78,6 +84,7 @@ public class ShootProjectile : MonoBehaviour
     {
         scoreManager = FindObjectOfType<ArcheryScoreManager>();
         startingFOV = cam.fieldOfView; // sets starting FOV
+        CamRot = cam.transform.rotation;
     }
 
     // Update is called once per frame
@@ -99,7 +106,7 @@ public class ShootProjectile : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-
+        ArrowsLeft.text = "Arrows Left: " + (arrows - arrowsShot).ToString();
         if (ending)
         {
             if (endingTimer >= 1)

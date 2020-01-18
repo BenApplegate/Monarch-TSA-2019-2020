@@ -12,6 +12,7 @@ public class ArcheryScoreManager : MonoBehaviour
     public Text HighScore;
     public Text NewHighScore;
     public Text MainMenu;
+    public Text ArrowsLeft;
     SceneManager SceneManager = new SceneManager();
     
 
@@ -51,6 +52,7 @@ public class ArcheryScoreManager : MonoBehaviour
 
     public void EndGame()
     {
+        ArrowsLeft.enabled = false;
         MainMenu.enabled = true;
         CrossHair.enabled = false;
         if (!PlayerPrefs.HasKey("ArcheryHighScore"))
