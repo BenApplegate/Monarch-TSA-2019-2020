@@ -19,14 +19,14 @@ public class Shotgun : MonoBehaviour
                 Shoot();
                 shots++;
             }
-                
-            
+
+
         }
         if (Time.time > 30)
         {
             SceneManager.LoadScene("BetterMenu");
         }
-        
+
 
     }
     void Shoot()
@@ -41,16 +41,9 @@ public class Shotgun : MonoBehaviour
             {
                 target.TakeDamage(damage);
             }
-            
+
         }
-    }
-    void changeScene()
-    {
-        if (Time.deltaTime > 1)
-        {
-            SceneManager.LoadScene("Weight Lifting");
-        }
-        
     }
 }
+
 
