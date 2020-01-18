@@ -39,7 +39,7 @@ public class Stroke : MonoBehaviour
 
     public void CheckA()
     {
-        if (Input.GetKey(KeyCode.A) == true)
+        if (Input.GetKeyDown(KeyCode.A) == true)
         {
             move.AddForce(Vector3.right * strokeStrength);
             apressed = true;
@@ -49,7 +49,7 @@ public class Stroke : MonoBehaviour
 
     public void CheckD()
     {
-        if (Input.GetKey(KeyCode.D) == true)
+        if (Input.GetKeyDown(KeyCode.D) == true)
         {
             move.AddForce(Vector3.right * strokeStrength);
             dpressed = true;
