@@ -22,8 +22,14 @@ public class ShootProjectile : MonoBehaviour
     float startingFOV; // The FOV that the camera starts with
     public Camera cam; // the camera
     public float zoomFactor = 2; // the factor that the camera zooms by
+    public Camera endCam;
+    public GameObject target;
 
     public BetterPauseMenu BetterPauseMenu;
+    ArcheryScoreManager scoreManager;
+
+    bool ending = false;
+    float endingTimer = 0;
 
     private void Awake()
     {
@@ -61,13 +67,16 @@ public class ShootProjectile : MonoBehaviour
         arrowsShot++; // increments arrowsShot
         if(arrowsShot == arrows) // If the player has fired all of their arrows
             {
-                endGame();
+                Debug.Log("endGame");
+                ending = true;
+
             }
     }
     }
     // Start is called before the first frame update
     void Start()
     {
+        scoreManager = FindObjectOfType<ArcheryScoreManager>();
         startingFOV = cam.fieldOfView; // sets starting FOV
     }
 
@@ -90,12 +99,29 @@ public class ShootProjectile : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
+
+        if (ending)
+        {
+            if (endingTimer >= 1)
+            {
+                ending = false;
+                endGame();
+            }
+            else{
+                endingTimer += Time.deltaTime;
+                Debug.Log(endingTimer);
+            }
+        }
+
     }
 
     private void endGame()
     {
         Debug.Log("Game Over");
-        //put code that ends the game here
+        endCam.gameObject.GetComponent<Transform>().position = new Vector3(endCam.gameObject.transform.position.x, endCam.gameObject.transform.position.y, target.transform.position.z - 1.5f);
+        endCam.enabled = true;
+        cam.enabled = false;
+        scoreManager.EndGame();
     }
 
     private void OnEnable()
