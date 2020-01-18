@@ -21,7 +21,7 @@ public class Stroke : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (pos.position.x < 40)
+        if (pos.position.x >= 40)
         {
             SceneManager.LoadScene("BetterMenu");
         }
