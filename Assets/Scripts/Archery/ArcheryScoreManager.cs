@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ArcheryScoreManager : MonoBehaviour
 {
     int score = 0;
     public Text scoreText;
+    public Image CrossHair;
+    public Text HighScore;
+    public Text NewHighScore;
+    public Text MainMenu;
+    SceneManager SceneManager = new SceneManager();
+    
 
     public void AddScore(Collider item)
     {
@@ -32,6 +39,34 @@ public class ArcheryScoreManager : MonoBehaviour
     private void Update()
     {
         scoreText.text = "Score: " + score.ToString();
+
+        if (MainMenu.enabled)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                SceneManager.LoadScene("BetterMenu");
+            }
+        }
+    }
+
+    public void EndGame()
+    {
+        MainMenu.enabled = true;
+        CrossHair.enabled = false;
+        if (!PlayerPrefs.HasKey("ArcheryHighScore"))
+        {
+            PlayerPrefs.SetInt("ArcheryHighScore", score);
+        }
+        else
+        {
+            if(score > PlayerPrefs.GetInt("ArcheryHighScore"))
+            {
+                PlayerPrefs.SetInt("ArcheryHighScore", score);
+                NewHighScore.enabled = true;
+            }
+        }
+        HighScore.text = "High Score: " + PlayerPrefs.GetInt("ArcheryHighScore").ToString();
+        HighScore.enabled = true;
     }
 
 }
