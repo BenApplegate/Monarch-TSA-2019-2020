@@ -10,12 +10,20 @@ public class Stroke : MonoBehaviour
     private bool dpressed; // Signals if "d" key has been pressed
     public float strokeStrength = 0.1f;
     SceneManager SceneManager = new SceneManager();
+    float time;
+    public float score;
 
     // Start is called before the first frame update
     void Start()
     {
         apressed = true;
         dpressed = true;
+    }
+
+    private void Update()
+    {
+        time += Time.time;
+        score = (transform.position.x+49.5f)/(time/100);
     }
 
     // Update is called once per frame
