@@ -16,6 +16,10 @@ public class BetterPauseMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            if(!(StartMenu.GamehasStarted))
+            {
+                return;
+            }
             if(gameIsPaused){
                 Resume();
             }
