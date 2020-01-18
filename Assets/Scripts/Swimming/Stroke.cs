@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class Stroke : MonoBehaviour
 {
-    public Transform move; // Holds the position of the player for movement
-    public bool apressed; // Signals if "a" key has been pressed
-    public bool dpressed; // Signals if "d" key has been pressed
+    public Rigidbody move; // Holds the position of the player for movement
+    public Transform pos;
+    private bool apressed; // Signals if "a" key has been pressed
+    private bool dpressed; // Signals if "d" key has been pressed
+    public float strokeStrength = 0.1f;
+    SceneManager SceneManager = new SceneManager();
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +21,10 @@ public class Stroke : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        if (pos.position.x < 40)
+        {
+            SceneManager.LoadScene("BetterMenu");
+        }
 
         if (dpressed == true)
         {
@@ -34,7 +41,7 @@ public class Stroke : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A) == true)
         {
-            move.position += new Vector3(3.3f, 0.0f, 0.0f);
+            move.AddForce(Vector3.right * strokeStrength);
             apressed = true;
             dpressed = false;
         }
@@ -44,7 +51,7 @@ public class Stroke : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D) == true)
         {
-            move.position += new Vector3(3.3f, 0.0f, 0.0f);
+            move.AddForce(Vector3.right * strokeStrength);
             dpressed = true;
             apressed = false;
         }
