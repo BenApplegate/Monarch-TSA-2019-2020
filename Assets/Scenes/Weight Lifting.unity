@@ -127,11 +127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 1e8d8f389d243ac40ad057248196a8f0,
-        type: 3}
-      propertyPath: m_Name
-      value: low_poly_head_with_1_hair
-      objectReference: {fileID: 0}
     - target: {fileID: -8704091110130540864, guid: 1e8d8f389d243ac40ad057248196a8f0,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -701,6 +696,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -85.345
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1e8d8f389d243ac40ad057248196a8f0,
+        type: 3}
+      propertyPath: m_Name
+      value: low_poly_head_with_1_hair
       objectReference: {fileID: 0}
     - target: {fileID: -677338413447241995, guid: 1e8d8f389d243ac40ad057248196a8f0,
         type: 3}
@@ -1762,7 +1762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 496}
+  m_AnchoredPosition: {x: 0, y: 389}
   m_SizeDelta: {x: 640, y: 72.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &621490873
@@ -2741,7 +2741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000024796, y: 360.6}
+  m_AnchoredPosition: {x: 0, y: 267}
   m_SizeDelta: {x: 866.8, y: 198.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633190050
