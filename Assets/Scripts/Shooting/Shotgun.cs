@@ -14,12 +14,20 @@ public class Shotgun : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            if (shots < 5)
+            {
                 Shoot();
-            shots++;
+                shots++;
+            }
+                
+            
         }
+        if (Time.time > 30)
+        {
+            SceneManager.LoadScene("BetterMenu");
+        }
+        
 
-        if (shots == 5)
-            SceneManager.LoadScene("Weight Lifting");
     }
     void Shoot()
     {
@@ -36,4 +44,13 @@ public class Shotgun : MonoBehaviour
             
         }
     }
+    void changeScene()
+    {
+        if (Time.deltaTime > 1)
+        {
+            SceneManager.LoadScene("Weight Lifting");
+        }
+        
+    }
 }
+
