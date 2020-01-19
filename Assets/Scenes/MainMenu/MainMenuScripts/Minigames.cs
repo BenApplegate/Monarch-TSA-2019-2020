@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
 
@@ -21,6 +22,8 @@ public class Minigames : MonoBehaviour
 
     public void archeryGame () {
         SceneManager.LoadScene("Archery");
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void shootingGame () {
