@@ -14,22 +14,22 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         Debug.Log(Time.time);
-            if (Time.time >= 5 && !fire1)
+            if (Time.timeSinceLevelLoad >= 5 && !fire1)
             {
                 skeet2.yeetSkeet(power);
             fire1 = true;
             }
-            if (Time.time >= 10 && !fire2)
+            if (Time.timeSinceLevelLoad >= 10 && !fire2)
             {
                 skeet1.yeetSkeet(power);
             fire2 = true;
             }
-            if (Time.time >= 15 && !fire3)
+            if (Time.timeSinceLevelLoad >= 15 && !fire3)
             {
                 skeet2.yeetSkeet(power);
             fire3 = true;
             }
-            if (Time.time >= 20 && !fire4)
+            if (Time.timeSinceLevelLoad >= 20 && !fire4)
             {
                 skeet1.yeetSkeet(power);
             fire4 = true;

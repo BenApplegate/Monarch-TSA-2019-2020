@@ -22,7 +22,7 @@ public class Shotgun : MonoBehaviour
 
 
         }
-        if (Time.time > 30)
+        if (Time.timeSinceLevelLoad > 30)
         {
             SceneManager.LoadScene("BetterMenu");
         }
