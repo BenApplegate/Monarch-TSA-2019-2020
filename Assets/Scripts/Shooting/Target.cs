@@ -6,7 +6,8 @@ public class Target : MonoBehaviour
     public float health = 50f;
     public Rigidbody rb;
     public int points = 0;
-    private int totalpoints;
+    public static int totalpoints = 0;
+    public static int totalHits = 0;
     void Start()
     {
         StartCoroutine(Seconds());
@@ -26,6 +27,7 @@ public class Target : MonoBehaviour
     {
         Destroy(gameObject);
         totalpoints = points + 5;
+        totalHits = totalHits + 1;
     }
     WaitForSecondsRealtime Seconds()
     {

@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 public class Shotgun : MonoBehaviour
 {
+
     public string Archery;
     // Start is called before the first frame update
     public float damage = 10f;
