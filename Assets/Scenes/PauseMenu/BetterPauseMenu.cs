@@ -9,12 +9,13 @@ public class BetterPauseMenu : MonoBehaviour
 
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+    public bool disabled;
 
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && !disabled)
         {
             if(gameIsPaused){
                 Resume();

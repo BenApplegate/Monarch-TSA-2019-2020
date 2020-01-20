@@ -11,13 +11,16 @@ public class Shotgun : MonoBehaviour
     public float range = 100f;
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
-    public float shots = 0f;
+    public int shots = 0;
     public int MaxShots = 5;
     BetterPauseMenu BetterPauseMenu;
     ShootingScoreManger scoreManger;
+    public int fireRate = 1;
+    float FireTime;
 
     private void Start()
     {
+        FireTime = 2;
         BetterPauseMenu = FindObjectOfType<BetterPauseMenu>();
         scoreManger = FindObjectOfType<ShootingScoreManger>();
         BetterPauseMenu.Resume();
@@ -26,8 +29,9 @@ public class Shotgun : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown("Fire1") && !BetterPauseMenu.gameIsPaused)
+        if (Input.GetButtonDown("Fire1") && !BetterPauseMenu.gameIsPaused && Time.timeSinceLevelLoad >= FireTime)
         {
+            FireTime += (fireRate + (Time.timeSinceLevelLoad - FireTime));
             if (shots < MaxShots)
             {
                 Shoot();

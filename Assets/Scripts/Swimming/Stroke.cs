@@ -22,7 +22,7 @@ public class Stroke : MonoBehaviour
 
     private void Update()
     {
-        time += Time.time;
+        time += Time.timeSinceLevelLoad;
         score = (transform.position.x+49.5f)/(time/100);
     }
 
