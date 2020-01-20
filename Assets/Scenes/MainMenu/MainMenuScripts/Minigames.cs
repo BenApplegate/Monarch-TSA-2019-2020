@@ -45,6 +45,6 @@ public class Minigames : MonoBehaviour
     }
 
     public void rowingGame () {
-        SceneManager.LoadScene("Rowing");
+        SceneManager.LoadScene("RowingGameNew");
     }
 }
