@@ -399,13 +399,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 326030681}
-    characterCount: 17
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1621,11 +1621,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1585119123}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 18179f621bba2424abb045b121957909,
+    - target: {fileID: -6057140222963153312, guid: 18179f621bba2424abb045b121957909,
         type: 3}
-      propertyPath: m_Name
-      value: low_poly_head_with_1_hair
-      objectReference: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a0435313e1bddc743996a7f37aee9ef8, type: 2}
     - target: {fileID: -4216859302048453862, guid: 18179f621bba2424abb045b121957909,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1681,11 +1681,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 18179f621bba2424abb045b121957909,
+    - target: {fileID: -927199367670048503, guid: 18179f621bba2424abb045b121957909,
         type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a0435313e1bddc743996a7f37aee9ef8, type: 2}
+      propertyPath: m_Name
+      value: low_poly_head_with_1_hair
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18179f621bba2424abb045b121957909, type: 3}
 --- !u!1 &1256816919
@@ -1991,7 +1991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: {fileID: 1585119125}
   pos: {fileID: 1585119123}
-  strokeStrength: 20
+  strokeStrength: 23
 --- !u!54 &1585119125
 Rigidbody:
   m_ObjectHideFlags: 0
