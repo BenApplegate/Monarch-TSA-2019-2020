@@ -10,6 +10,7 @@ public class Minigames : MonoBehaviour
 {
     
     public TextMeshProUGUI archeryHighScore;
+    public TextMeshProUGUI shootingHighScore;
     
     private void Start(){
         if(PlayerPrefs.HasKey("ArcheryHighScore")){
@@ -19,6 +20,14 @@ public class Minigames : MonoBehaviour
             archeryHighScore.SetText("High Score: 0");
         }
 
+        if (PlayerPrefs.HasKey("ShootingHighScore"))
+        {
+            shootingHighScore.SetText("High Score: " + PlayerPrefs.GetInt("ShootingHighScore"));
+        }
+        else
+        {
+            shootingHighScore.SetText("High Score: 0");
+        }
     }
 
     public void archeryGame () {
