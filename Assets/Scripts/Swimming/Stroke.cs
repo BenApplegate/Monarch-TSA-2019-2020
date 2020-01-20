@@ -12,7 +12,8 @@ public class Stroke : MonoBehaviour
     SceneManager SceneManager = new SceneManager();
     float time;
     public float score;
-
+    public ParticleSystem splash;
+    public ParticleSystem sploosh;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +53,7 @@ public class Stroke : MonoBehaviour
             move.AddForce(Vector3.right * strokeStrength);
             apressed = true;
             dpressed = false;
+            splash.Play();
         }
     } // Checks if A is pressed, and if so, moves the player
 
@@ -62,6 +64,7 @@ public class Stroke : MonoBehaviour
             move.AddForce(Vector3.right * strokeStrength);
             dpressed = true;
             apressed = false;
+            sploosh.Play();
         }
     } // Checks if D is pressed, and if so, moves the player
 }
