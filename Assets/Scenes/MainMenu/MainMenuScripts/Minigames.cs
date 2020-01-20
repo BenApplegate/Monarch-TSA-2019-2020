@@ -11,6 +11,8 @@ public class Minigames : MonoBehaviour
     
     public TextMeshProUGUI archeryHighScore;
     public TextMeshProUGUI shootingHighScore;
+    public TextMeshProUGUI RowingHighScore;
+    public TextMeshProUGUI SwimmingHighScore;
     
     private void Start(){
         if(PlayerPrefs.HasKey("ArcheryHighScore")){
@@ -27,6 +29,22 @@ public class Minigames : MonoBehaviour
         else
         {
             shootingHighScore.SetText("High Score: 0");
+        }
+        if (PlayerPrefs.HasKey("RowingHighScore"))
+        {
+            RowingHighScore.SetText("High Score: " + PlayerPrefs.GetInt("RowingHighScore"));
+        }
+        else
+        {
+            RowingHighScore.SetText("High Score: 0");
+        }
+        if (PlayerPrefs.HasKey("SwimmingHighScore"))
+        {
+            SwimmingHighScore.SetText("Lowest Score: " + PlayerPrefs.GetInt("SwimmingHighScore"));
+        }
+        else
+        {
+            SwimmingHighScore.SetText("Lowest Score: 0");
         }
     }
 
