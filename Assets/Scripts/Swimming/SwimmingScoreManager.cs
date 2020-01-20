@@ -45,5 +45,6 @@ public class SwimmingScoreManager : MonoBehaviour
         HighScore.SetText("Lowest Score: " + PlayerPrefs.GetInt("SwimmingHighScore"));
         HighScore.enabled = true;
         MainMenu.enabled = true;
+        Ending = true; 
     }
 }
