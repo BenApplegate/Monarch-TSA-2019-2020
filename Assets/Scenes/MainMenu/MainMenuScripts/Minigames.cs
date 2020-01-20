@@ -18,6 +18,7 @@ public class Minigames : MonoBehaviour
         else{
             archeryHighScore.SetText("High Score: 0");
         }
+
     }
 
     public void archeryGame () {
@@ -32,10 +33,6 @@ public class Minigames : MonoBehaviour
     
     public void swimmingGame () {
         SceneManager.LoadScene("Swimming");
-    }
-
-    public void weightliftingGame () {
-        SceneManager.LoadScene("Weight Lifting");
     }
 
     public void rowingGame () {

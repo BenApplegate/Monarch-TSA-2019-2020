@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4128856452010568334}
   - component: {fileID: 4128856452011534414}
   - component: {fileID: 4128856451999974734}
+  - component: {fileID: -3675776266748244022}
   m_Layer: 0
   m_Name: tree_blue_2
   m_TagString: Untagged
@@ -98,3 +99,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &-3675776266748244022
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4128856452009342606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 5bc8dce5ca551a747a9dd56dd4371221, type: 3}

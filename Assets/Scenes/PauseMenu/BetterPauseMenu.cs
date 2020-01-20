@@ -25,15 +25,19 @@ public class BetterPauseMenu : MonoBehaviour
         }
     }
 
-    void Resume () { // Resume the scene
+    public void Resume () { // Resume the scene
         pauseMenuUI.SetActive(false); 
         Time.timeScale = 1f;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         gameIsPaused = false;
     }
 
     void Pause () { //Pause the scene and pulls up the UI for pause menu
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         gameIsPaused = true;
 
     }

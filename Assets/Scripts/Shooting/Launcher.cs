@@ -8,7 +8,7 @@ public class Launcher : MonoBehaviour
     // Start is called before the first frame update
     public void yeetSkeet(float firespeed)
     {
-            GameObject Skeet2Yeet = Instantiate(skeet, this.transform.position, this.transform.rotation);
-            Skeet2Yeet.GetComponent<Rigidbody>().velocity = Skeet2Yeet.transform.forward * firespeed;
+            GameObject Skeet2Yeet = Instantiate(skeet, this.transform.position, Quaternion.identity);
+            Skeet2Yeet.GetComponent<Rigidbody>().velocity = this.transform.forward * firespeed;
     }
 }
