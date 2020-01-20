@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7112170016353242565}
   - component: {fileID: 7112170016354209541}
   - component: {fileID: 7112170016342663685}
+  - component: {fileID: 3927031235842240037}
   m_Layer: 0
   m_Name: tree_blue_10
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7112170016352014789}
   m_LocalRotation: {x: 0.0000018099951, y: -0.0000036517765, z: 6.6097587e-12, w: 1}
-  m_LocalPosition: {x: 1.8895264, y: 1.9970171, z: -6.7405396}
+  m_LocalPosition: {x: 1.8895264, y: 1.9970171, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,3 +99,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &3927031235842240037
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7112170016352014789}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: a622beaa4081b894c978a61847c9ce1d, type: 3}

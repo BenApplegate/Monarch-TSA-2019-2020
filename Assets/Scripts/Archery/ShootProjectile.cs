@@ -85,6 +85,8 @@ public class ShootProjectile : MonoBehaviour
         scoreManager = FindObjectOfType<ArcheryScoreManager>();
         startingFOV = cam.fieldOfView; // sets starting FOV
         CamRot = cam.transform.rotation;
+        BetterPauseMenu = FindObjectOfType<BetterPauseMenu>();
+        BetterPauseMenu.Resume();
     }
 
     // Update is called once per frame

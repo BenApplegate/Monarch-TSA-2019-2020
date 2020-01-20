@@ -12,12 +12,23 @@ public class Shotgun : MonoBehaviour
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public float shots = 0f;
-    // Update is called once per frame
+    public int MaxShots = 5;
+    BetterPauseMenu BetterPauseMenu;
+    ShootingScoreManger scoreManger;
+
+    private void Start()
+    {
+        BetterPauseMenu = FindObjectOfType<BetterPauseMenu>();
+        scoreManger = FindObjectOfType<ShootingScoreManger>();
+        BetterPauseMenu.Resume();
+    }
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+
+        if (Input.GetButtonDown("Fire1") && !BetterPauseMenu.gameIsPaused)
         {
-            if (shots < 5)
+            if (shots < MaxShots)
             {
                 Shoot();
                 shots++;
@@ -25,10 +36,7 @@ public class Shotgun : MonoBehaviour
 
 
         }
-        if (Time.timeSinceLevelLoad > 30)
-        {
-            SceneManager.LoadScene("BetterMenu");
-        }
+        
 
 
     }
@@ -43,6 +51,7 @@ public class Shotgun : MonoBehaviour
             if (target != null)
             {
                 target.TakeDamage(damage);
+                scoreManger.addScore();
             }
 
         }

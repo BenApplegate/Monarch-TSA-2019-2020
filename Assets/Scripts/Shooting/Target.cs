@@ -6,12 +6,12 @@ public class Target : MonoBehaviour
     public float health = 50f;
     public Rigidbody rb;
     public int points = 0;
-    public static int totalpoints = 0;
-    public static int totalHits = 0;
+
+    public GameObject fractured;
     void Start()
     {
-        StartCoroutine(Seconds());
-        rb.AddForce(0 - Random.Range(5, 9), Random.Range(10, 12), 0, ForceMode.Impulse);
+
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
     }
 
 
@@ -23,14 +23,36 @@ public class Target : MonoBehaviour
             Die();
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Terrain")
+        {
+            Die();
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Die();
+        }
+    }
+
     void Die()
     {
+        Debug.Log("HIT! " + Time.time);
+        GameObject broken = Instantiate(fractured, this.transform.position, Quaternion.identity);
+        foreach(GameObject rb in broken.GetComponent<List>().objects)
+        {
+            Vector3 velocity = this.gameObject.GetComponent<Rigidbody>().velocity;
+            rb.GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(velocity.x - 3, velocity.x +3), Random.Range(velocity.y - 3, velocity.y+3),Random.Range(velocity.z -3, velocity.z +3));
+            rb.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        }
+        
+        
         Destroy(gameObject);
-        totalpoints = points + 5;
-        totalHits = totalHits + 1;
     }
-    WaitForSecondsRealtime Seconds()
-    {
-        return new WaitForSecondsRealtime(5);
-    }
+    
 }
