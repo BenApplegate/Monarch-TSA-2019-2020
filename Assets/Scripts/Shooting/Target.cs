@@ -32,13 +32,6 @@ public class Target : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            Die();
-        }
-    }
 
     void Die()
     {
