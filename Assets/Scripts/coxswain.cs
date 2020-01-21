@@ -83,6 +83,8 @@ public class coxswain : MonoBehaviour
             // need to finish
         }
 
+        
+
            
     }
 
@@ -154,31 +156,31 @@ public class coxswain : MonoBehaviour
     bool testMash(Color32 obj)
     {
         Color32 objColor = obj;
-        if (Input.GetKeyDown(KeyCode.W) && objColor == Color.red)
+        if (Input.GetKeyDown(KeyCode.W) && objColor == Color.red && !BetterPauseMenu.gameIsPaused)
         {
             score = 1;
             check = true;
             return true;
         }
-        else if (Input.GetKeyDown(KeyCode.A) && objColor == Color.blue)
+        else if (Input.GetKeyDown(KeyCode.A) && objColor == Color.blue && !BetterPauseMenu.gameIsPaused)
         {
             score = 1;
             check = true;
             return true;
         }
-        else if (Input.GetKeyDown(KeyCode.D) && objColor == Color.yellow)
+        else if (Input.GetKeyDown(KeyCode.D) && objColor == Color.yellow && !BetterPauseMenu.gameIsPaused)
         {
             score = 1;
             check = true;
             return true;
         }
-
         else
         {
             score = 0;
             check = false;
             return false;
         }
+        
     }
 
     public bool getCheck()
