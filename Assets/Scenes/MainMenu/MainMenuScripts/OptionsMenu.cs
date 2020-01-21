@@ -8,16 +8,37 @@ using UnityEngine.UI;
 public class OptionsMenu : MonoBehaviour
 {
 
+    public Slider slider;
+    AudioSource audio;
 
-    public AudioMixer audioMixer;
+    private void Awake()
+    {
+        audio = FindObjectOfType<AudioSource>();
+        if(PlayerPrefs.HasKey("voloume"))
+        audio.volume = PlayerPrefs.GetFloat("voloume");
+    }
 
-    public void SetVolume (float volume) { // Set Volume to the Game, Audio Slider not yet made
-        audioMixer.SetFloat("volume", volume);
+    private void Start()
+    {
+        
+        slider.value = PlayerPrefs.GetFloat("voloume");
+        
+    }
+
+    private void Update()
+    {
+        PlayerPrefs.SetFloat("voloume", audio.volume);
+        Debug.Log(PlayerPrefs.GetFloat("voloume"));
+    }
+
+    public void SetVolume (float vol) { // Set Volume to the Game, Audio Slider not yet made
+        audio.volume = vol;
     }
 
     public void SetFullScreen (bool isFullScreen) // Toggles Fullscreen, window not resizeable. But has a way of exiting
     {
         Screen.fullScreen = isFullScreen;
+        
     }
 
     
