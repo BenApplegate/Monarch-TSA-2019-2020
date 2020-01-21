@@ -14,7 +14,10 @@ public class OptionsMenu : MonoBehaviour
     private void Awake()
     {
         audio = FindObjectOfType<AudioSource>();
-        if(PlayerPrefs.HasKey("voloume"))
+        if (!PlayerPrefs.HasKey("voloume"))
+        {
+            PlayerPrefs.SetFloat("voloume", .1f);
+        }
         audio.volume = PlayerPrefs.GetFloat("voloume");
     }
 
