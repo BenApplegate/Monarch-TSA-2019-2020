@@ -8,12 +8,21 @@ public class HUBLevelLoader : MonoBehaviour
 {
     SceneManager SceneManager = new SceneManager();
     public string LevelName;
+    public bool CloseGame = false;
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.gameObject.name == "Player")
         {
-            SceneManager.LoadScene(LevelName);
+            if (CloseGame)
+            {
+                Application.Quit();
+            }
+            else
+            {
+                SceneManager.LoadScene(LevelName);
+            }
         }
     }
 }
