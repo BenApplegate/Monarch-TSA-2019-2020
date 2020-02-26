@@ -9,11 +9,11 @@ public class OptionsMenu : MonoBehaviour
 {
 
     public Slider slider;
-    AudioSource audio;
+    public AudioSource audio;
 
     private void Awake()
     {
-        audio = FindObjectOfType<AudioSource>();
+        audio = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
         if (!PlayerPrefs.HasKey("voloume"))
         {
             PlayerPrefs.SetFloat("voloume", .1f);

@@ -8,6 +8,8 @@ TagManager:
   - Inner Ring
   - Outer Ring
   - Target
+  - Fire
+  - Music
   layers:
   - Default
   - TransparentFX
