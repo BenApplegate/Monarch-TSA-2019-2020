@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RowingGameNew.unity
     guid: 37738c57b16925c4b855291024b59d14
+  - enabled: 1
+    path: Assets/Scenes/MainMenu/OldMenu.unity
+    guid: 58bdf6369a0265b42affae4503682f91
   m_configObjects: {}
