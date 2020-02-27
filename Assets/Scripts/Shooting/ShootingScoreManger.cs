@@ -14,9 +14,13 @@ public class ShootingScoreManger : MonoBehaviour
     public TextMeshProUGUI NewHighScore;
     public TextMeshProUGUI PressSpace;
 
-    SceneManager SceneManager = new SceneManager();
+    MainMenuLoader MenuLoader;
     bool Ending = false;
 
+    private void Awake()
+    {
+        MenuLoader = FindObjectOfType<MainMenuLoader>();
+    }
     public void addScore()
     {
         score++;
@@ -29,7 +33,7 @@ public class ShootingScoreManger : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space) && Ending)
         {
-            SceneManager.LoadScene("BetterMenu");
+            MenuLoader.LoadMenu(1);
         }
 
     }

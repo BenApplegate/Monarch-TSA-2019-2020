@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
-{ 
+{
 
     public coxswain chec;
 
@@ -24,23 +24,23 @@ public class Score : MonoBehaviour
     public TextMeshProUGUI Space;
 
     bool Ending = false;
-    SceneManager SceneManager = new SceneManager();
-    void Start()
+    MainMenuLoader menuLoader;
+    void Awake()
     {
-
+        menuLoader = FindObjectOfType<MainMenuLoader>();
     }
 
     // Update is called once per frame
     void Update()
     {
         ctime -= 1 * Time.deltaTime;
-        
+
 
         if (ctime <= 0)
         {
             EndGame();
         }
-        
+
 
         // calulate score, works meh
         if (Input.anyKey)
@@ -56,11 +56,11 @@ public class Score : MonoBehaviour
             stext.text = "Score: " + numscore;
         }
 
-        if(Input.GetKey(KeyCode.Space) && Ending)
+        if (Input.GetKey(KeyCode.Space) && Ending)
         {
-            SceneManager.LoadScene("BetterMenu");
+            menuLoader.LoadMenu(3);
         }
-        
+
     }
 
     public void EndGame()
@@ -79,7 +79,7 @@ public class Score : MonoBehaviour
         }
         else
         {
-             if(numscore > PlayerPrefs.GetInt("RowingHighScore"))
+            if (numscore > PlayerPrefs.GetInt("RowingHighScore"))
             {
                 PlayerPrefs.SetInt("RowingHighScore", numscore);
                 NewHighScore.enabled = true;
@@ -98,9 +98,9 @@ public class Score : MonoBehaviour
     {
         return numscore;
     }
-    
-    
-    
 
-    
+
+
+
+
 }

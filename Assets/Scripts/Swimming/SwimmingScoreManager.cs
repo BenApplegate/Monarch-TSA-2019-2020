@@ -14,6 +14,12 @@ public class SwimmingScoreManager : MonoBehaviour
     public TextMeshProUGUI MainMenu;
 
     bool Ending = false;
+    MainMenuLoader MenuLoader;
+
+    private void Awake()
+    {
+        MenuLoader = FindObjectOfType<MainMenuLoader>();
+    }
 
     private void Update()
     {
@@ -22,8 +28,7 @@ public class SwimmingScoreManager : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space) && Ending)
         {
-            SceneManager SceneManager= new SceneManager();
-            SceneManager.LoadScene("BetterMenu");
+            MenuLoader.LoadMenu(2);
         }
 
     }

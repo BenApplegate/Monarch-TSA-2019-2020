@@ -31,7 +31,6 @@ public class OptionsMenu : MonoBehaviour
     private void Update()
     {
         PlayerPrefs.SetFloat("voloume", audio.volume);
-        Debug.Log(PlayerPrefs.GetFloat("voloume"));
     }
 
     public void SetVolume (float vol) { // Set Volume to the Game, Audio Slider not yet made

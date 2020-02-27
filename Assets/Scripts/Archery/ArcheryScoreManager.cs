@@ -13,8 +13,13 @@ public class ArcheryScoreManager : MonoBehaviour
     public Text NewHighScore;
     public Text MainMenu;
     public Text ArrowsLeft;
-    SceneManager SceneManager = new SceneManager();
-    
+    MainMenuLoader MainMenuLoader;
+
+
+    private void Awake()
+    {
+        MainMenuLoader = FindObjectOfType<MainMenuLoader>();    
+    }
 
     public void AddScore(Collider item)
     {
@@ -44,7 +49,7 @@ public class ArcheryScoreManager : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                SceneManager.LoadScene("BetterMenu");
+                MainMenuLoader.LoadMenu(0);
             }
         }
     }

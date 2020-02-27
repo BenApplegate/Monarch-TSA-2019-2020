@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioDontDestroy : MonoBehaviour
+public class SceneDontDestroy : MonoBehaviour
 {
-    public static AudioDontDestroy instance = null;
+    public static SceneDontDestroy instance = null;
    
     private void Awake()
     {
