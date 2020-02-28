@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         {
             if (rb.velocity.magnitude < MovementSpeed)
             {
-                rb.AddForce(transform.right * Input.GetAxis("Horizontal") * (MovementSpeed - rb.velocity.magnitude));
+                rb.AddForce(transform.right * Input.GetAxis("Horizontal") * (MovementSpeed - rb.velocity.magnitude) );
             }
         }
         else
@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(-1 * rb.velocity * (rb.velocity.magnitude / slowFactor));
             
         }
+
 
         if(Input.GetAxis("Mouse X") == 0)
         {

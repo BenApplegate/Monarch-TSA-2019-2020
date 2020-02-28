@@ -10,6 +10,10 @@ public class HUBLevelLoader : MonoBehaviour
     public string LevelName;
     public bool CloseGame = false;
 
+    private void Awake()
+    {
+        GetComponent<BoxCollider>().isTrigger = true;
+    }
     private void OnTriggerEnter(Collider other)
     {
         
