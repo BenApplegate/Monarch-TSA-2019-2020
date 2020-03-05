@@ -5,19 +5,13 @@ using UnityEngine;
 public class BowAnimationManager : MonoBehaviour
 {
 
-    public SkinnedMeshRenderer renderer;
-    public Transform Arrow;
-    Vector3 StartPos;
-    public float moveDistance;
+    public SkinnedMeshRenderer Bow;
+    public SkinnedMeshRenderer Arrow;
 
-    private void Awake()
-    {
-        StartPos = Arrow.position;
-    }
 
     public void UpdateStrength(float strength, float MaxStrength)
     {
-        renderer.SetBlendShapeWeight(0, (strength / MaxStrength) * 50);
-        Arrow.position = StartPos + (Arrow.up * -1 * strength * moveDistance);
+        Bow.SetBlendShapeWeight(0, (strength / MaxStrength) * 100);
+        Arrow.SetBlendShapeWeight(0, (strength / MaxStrength) * 100);
     }
 }
