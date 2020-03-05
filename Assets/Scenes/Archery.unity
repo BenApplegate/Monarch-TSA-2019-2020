@@ -1010,13 +1010,13 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: 3
     m_CustomResolution: -1
-    m_Strength: 0.421
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Strength: 0.554
+    m_Bias: 0
+    m_NormalBias: 0
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -3879,6 +3879,51 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.data[0]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+        type: 3}
+      propertyPath: m_AABB.m_Center.x
+      value: -0.918864
+      objectReference: {fileID: 0}
+    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+        type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: -0.045925245
+      objectReference: {fileID: 0}
+    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+        type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: -0.015534217
+      objectReference: {fileID: 0}
+    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.943339
+      objectReference: {fileID: 0}
+    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.08664259
+      objectReference: {fileID: 0}
+    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.025534289
+      objectReference: {fileID: 0}
+    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+        type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e3ffa1c86e884904ab41c63fb05b44a1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3954,50 +3999,45 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 4.44
       objectReference: {fileID: 0}
-    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+    - target: {fileID: 9001990083083611758, guid: e3ffa1c86e884904ab41c63fb05b44a1,
         type: 3}
-      propertyPath: m_BlendShapeWeights.Array.size
-      value: 1
+      propertyPath: m_LocalRotation.x
+      value: -0.5295917
       objectReference: {fileID: 0}
-    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+    - target: {fileID: 9001990083083611758, guid: e3ffa1c86e884904ab41c63fb05b44a1,
         type: 3}
-      propertyPath: m_AABB.m_Center.x
-      value: -0.918864
+      propertyPath: m_LocalRotation.y
+      value: 0.46854308
       objectReference: {fileID: 0}
-    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+    - target: {fileID: 9001990083083611758, guid: e3ffa1c86e884904ab41c63fb05b44a1,
         type: 3}
-      propertyPath: m_AABB.m_Center.y
-      value: -0.045925245
+      propertyPath: m_LocalRotation.z
+      value: -0.46854308
       objectReference: {fileID: 0}
-    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+    - target: {fileID: 9001990083083611758, guid: e3ffa1c86e884904ab41c63fb05b44a1,
         type: 3}
-      propertyPath: m_AABB.m_Center.z
-      value: -0.015534217
+      propertyPath: m_LocalRotation.w
+      value: 0.5295917
       objectReference: {fileID: 0}
-    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+    - target: {fileID: 9001990083083611758, guid: e3ffa1c86e884904ab41c63fb05b44a1,
         type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: 0.943339
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90.00001
       objectReference: {fileID: 0}
-    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+    - target: {fileID: 9001990083083611758, guid: e3ffa1c86e884904ab41c63fb05b44a1,
         type: 3}
-      propertyPath: m_AABB.m_Extent.y
-      value: 0.08664259
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+    - target: {fileID: 9001990083083611758, guid: e3ffa1c86e884904ab41c63fb05b44a1,
         type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: 0.025534289
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -7
       objectReference: {fileID: 0}
-    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
+    - target: {fileID: 9001990083083611758, guid: e3ffa1c86e884904ab41c63fb05b44a1,
         type: 3}
-      propertyPath: m_DirtyAABB
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 894140155278483403, guid: e3ffa1c86e884904ab41c63fb05b44a1,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[0]
-      value: 0
+      propertyPath: m_LocalPosition.y
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3ffa1c86e884904ab41c63fb05b44a1, type: 3}
