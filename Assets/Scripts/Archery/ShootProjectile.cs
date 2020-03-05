@@ -34,6 +34,8 @@ public class ShootProjectile : MonoBehaviour
     public Text ArrowsLeft;
     Quaternion CamRot;
 
+    public BowAnimationManager bow;
+
     private void Awake()
     {
             input = new InputActions();
@@ -62,7 +64,7 @@ public class ShootProjectile : MonoBehaviour
 
         cam.fieldOfView = startingFOV; // resets camera FOV
         if (arrowsShot < arrows) { //if you have arrows left to fire
-        GameObject fired = Instantiate(Arrow, this.transform.position, this.transform.rotation); //creates an arrow and saves it into the reference fired
+        GameObject fired = Instantiate(Arrow, this.transform.position + (this.transform.forward / 2), this.transform.rotation); //creates an arrow and saves it into the reference fired
         fired.transform.Rotate(90, 0, 0); // Rotates the arrow so it faces the right way
         fired.GetComponent<Rigidbody>().velocity += this.transform.forward * strength * power; // gives the arrow speed
         fired.GetComponent<Arrow>().shootProjectile = this; // Gives the arrow a reference to this script
@@ -92,6 +94,8 @@ public class ShootProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bow.UpdateStrength(strength, maxStrength);
+
         if (fireing && arrowsShot<arrows) // If you have arrows to fire and you are holding the fire button
         {
             BuildStrength();

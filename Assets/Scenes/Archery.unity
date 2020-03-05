@@ -4080,7 +4080,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 90
   orthographic: 0
@@ -4161,6 +4161,7 @@ MonoBehaviour:
   target: {fileID: 2032808449}
   BetterPauseMenu: {fileID: 0}
   ArrowsLeft: {fileID: 2094913618}
+  bow: {fileID: 0}
 --- !u!4 &1715390237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4837921557712724575, guid: b0bd82706c411ea438af7e8f2799b4c8,
